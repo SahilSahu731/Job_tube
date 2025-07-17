@@ -8,6 +8,8 @@ export const register = async (req, res) => {
     // Extract user details from the request body
     const { fullName, email, phoneNumber, password, role } = req.body;
 
+    // console.log(req.body)
+
     // Check if all required fields are provided
     if (!fullName || !email || !phoneNumber || !password || !role) {
       return res.status(400).json({
