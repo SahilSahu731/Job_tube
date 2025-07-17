@@ -4,6 +4,7 @@ import Login from './components/auth/Login'
 import Signup from './components/auth/Signup'
   import { ToastContainer } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import Jobs from './components/Jobs';
 
 const appRouter = createBrowserRouter([
   {
@@ -17,7 +18,11 @@ const appRouter = createBrowserRouter([
   {
     path: '/signup',  
     element: <Signup />,
-  }
+  },
+  {
+    path: '/job',
+    element: <Jobs />,
+  },
 ])
 
 function App() {
