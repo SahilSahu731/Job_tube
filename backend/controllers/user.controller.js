@@ -161,11 +161,11 @@ export const updateProfile = async (req, res) => {
       });
     }
 
-    user.fullName = fullName;
-    user.email = email;
-    user.phoneNumber = phoneNumber;
-    user.bio = bio;
-    user.skills = skillsArray;
+    if(fullName) user.fullName = fullName
+    if(email) user.email = email
+    if(phoneNumber)  user.phoneNumber = phoneNumber
+    if(bio) user.profile.bio = bio
+    if(skills) user.profile.skills = skillsArray
 
     // If the user has a profile, update it; otherwise, create a new one
 
