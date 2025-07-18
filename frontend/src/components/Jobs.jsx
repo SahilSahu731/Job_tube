@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import Navbar from './shared/Navbar'
 import Job from './Job';
-import { allJobs } from './LatestJobs';
 import FilterCard from './FilterCard';
+import { useSelector } from 'react-redux';
 
 
 const Jobs = () => {
-    // const { allJobs, searchedQuery } = useSelector(store => store.job);
+    const { allJobs } = useSelector(store => store.job);
     // eslint-disable-next-line no-unused-vars
     const [filterJobs, setFilterJobs] = useState(allJobs);
 
