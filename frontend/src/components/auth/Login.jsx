@@ -16,7 +16,7 @@ const Login = () => {
   const [input, setInput] = useState({
     email: "",
     password: "",
-    role: "student",
+    role: "",
   });
 
   const { loading, user } = useSelector((state) => state.auth);

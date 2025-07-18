@@ -23,8 +23,9 @@ const Signup = () => {
         email: '',
         phoneNumber: '',
         password: '',
-        role: 'student',
+        role: '',
         profile: '',
+        file: null,
     })
 
     const changeEventHandler = (e) => {
@@ -65,7 +66,7 @@ const Signup = () => {
         } finally{
             dispatch(setLoading(false));
         }
-        
+        console.log(input)
     }
 
     useEffect(() => {
@@ -156,6 +157,7 @@ const Signup = () => {
                             <Input
                                 accept="image/*"
                                 type="file"
+                                value={input.file}
                                 onChange={changeFileHandler}
                                 className="cursor-pointer"
                             />
