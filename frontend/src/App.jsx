@@ -37,7 +37,16 @@ const appRouter = createBrowserRouter([
   {
     path: '/profile',
     element: <Profile />
-  }
+  },
+  // admin routes
+  {
+    path: '/admin/companies',
+    element: <Companies />
+  },
+  {
+    path: '/admin/jobs',
+    element: <Jobs />
+  },
 ])
 
 function App() {
@@ -45,7 +54,7 @@ function App() {
   return (
     <>
       <RouterProvider router= {appRouter} />
-      <ToastContainer />
+      <ToastContainer position='bottom-right' />
     </>
   )
 }
