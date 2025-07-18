@@ -14,7 +14,6 @@ const CompaniesTable = () => {
     const [filterCompany, setFilterCompany] = useState(companies);
     const navigate = useNavigate();
     useEffect(()=>{
-        console.log("company", companies)
         const filteredCompany = companies.length >= 0 && companies.filter((company)=>{
             if(!searchCompanyByText){
                 return true
@@ -39,7 +38,7 @@ const CompaniesTable = () => {
                 </TableHeader>
                 <TableBody>
                     {
-                        companies?.map((company) => (
+                        filterCompany?.map((company) => (
                             <tr>
                                 <TableCell>
                                     <Avatar>

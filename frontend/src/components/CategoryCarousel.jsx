@@ -1,6 +1,9 @@
 import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 import { Button } from './ui/button';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setSearchedQuery } from '@/redux/jobSlice';
 
 const category = [
     "Frontend Developer",
@@ -18,16 +21,17 @@ const category = [
     "Marketing Specialist",
     "Business Analyst",
     "Product Manager",
+    "Business Analyst",
     "Sales Representative", 
 ]
 
 const CategoryCarousel = () => {
-    // const dispatch = useDispatch();
-    // const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const searchJobHandler = (query) => {
-        // dispatch(setSearchedQuery(query));
+        dispatch(setSearchedQuery(query));
         console.log(query)
-        // navigate("/browse");
+        navigate("/browse");
     }
 
     return (
