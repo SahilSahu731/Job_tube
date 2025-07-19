@@ -21,36 +21,44 @@ const category = [
     "Marketing Specialist",
     "Business Analyst",
     "Product Manager",
-    "Business Analyst",
-    "Sales Representative", 
-]
+    "Sales Representative",
+];
 
 const CategoryCarousel = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
     const searchJobHandler = (query) => {
         dispatch(setSearchedQuery(query));
-        console.log(query)
         navigate("/browse");
-    }
+    };
 
     return (
-        <div>
-            <Carousel className="w-full max-w-xl mx-auto my-20">
-                <CarouselContent>
+        <div className="px-4 sm:px-6 lg:px-8">
+            <Carousel className="w-full max-w-7xl mx-auto my-10 md:my-20"> 
+                <CarouselContent className="-ml-1 px-10"> 
                     {
                         category.map((cat, index) => (
-                            <CarouselItem key={index} className="md:basis-1/3 lg-basis-1/4 basis-1/2 flex flex-col justify-center items-center">
-                                <Button onClick={()=>searchJobHandler(cat)} variant="outline" className="rounded-full px-6 text-black">{cat}</Button>
+                            <CarouselItem
+                                key={index}
+                                className="pl-1 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 flex flex-col justify-center items-center" 
+                            >
+                                <Button
+                                    onClick={() => searchJobHandler(cat)}
+                                    variant="outline"
+                                    className="rounded-full px-4 py-2 text-black whitespace-nowrap text-sm sm:text-base"
+                                >
+                                    {cat}
+                                </Button>
                             </CarouselItem>
                         ))
                     }
                 </CarouselContent>
-                <CarouselPrevious className="text-black z-10 cursor-pointer" />
-                <CarouselNext className="text-black z-10 cursor-pointer" />
+                <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 text-black z-10 cursor-pointer  md:flex" /> 
+                <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 text-black z-10 cursor-pointer  md:flex" /> 
             </Carousel>
         </div>
-    )
-}
+    );
+};
 
-export default CategoryCarousel
+export default CategoryCarousel;

@@ -77,14 +77,15 @@ const CompanySetup = () => {
     return (
         <div>
             <Navbar />
-            <div className='max-w-xl bg-gray-800 p-10 border border-gray-700 rounded-md  mx-auto my-10'>
+            <div className='p-8'>
+            <div className='max-w-xl bg-gray-800 md:p-10 p-6 border border-gray-700 rounded-md  mx-auto my-10'>
                 <form onSubmit={submitHandler}>
                     <div className='flex items-center gap-10 mb-10 '>
                         <Button  onClick={() => navigate("/admin/companies")} variant="outline" type="button" className="flex items-center gap-2 bg-inherit text-gray-100 border border-green-600 hover:bg-green-600 px-5 hover:px-10 transition-all duration-500 font-semibold">
                             <ArrowLeft />
                             <span>Back</span>
                         </Button>
-                        <h1 className='font-bold ml-8 text-xl'>Company Setup</h1>
+                        <h1 className='font-bold ml-8 text-lg md:text-xl'>Company Setup</h1>
                     </div>
                     <div className='grid grid-cols-2 gap-8'>
                         <div>
@@ -142,7 +143,7 @@ const CompanySetup = () => {
                     }
                 </form>
             </div>
-
+</div>
         </div>
     )
 }

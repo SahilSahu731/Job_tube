@@ -12,7 +12,6 @@ const AdminJobsTable = () => {
     const navigate = useNavigate();
 
     useEffect(()=>{ 
-        // console.log('called', allAdminJobs);
         const filteredJobs = allAdminJobs?.filter((job)=>{
             if(!searchJobByText){
                 return true;
@@ -30,7 +29,7 @@ const AdminJobsTable = () => {
                     <TableRow className="hover:bg-inherit">
                         <TableHead>Company Name</TableHead>
                         <TableHead>Role</TableHead>
-                        <TableHead>Date</TableHead>
+                        <TableHead className="hidden md:block">Date</TableHead>
                         <TableHead className="text-right">Action</TableHead>
                     </TableRow>
                 </TableHeader>
@@ -40,7 +39,7 @@ const AdminJobsTable = () => {
                             <tr className='hover:bg-gray-600'>
                                 <TableCell>{job?.company?.name}</TableCell>
                                 <TableCell>{job?.title}</TableCell>
-                                <TableCell>{job?.createdAt.split("T")[0]}</TableCell>
+                                <TableCell className="hidden md:block">{job?.createdAt.split("T")[0]}</TableCell>
                                 <TableCell className="text-right cursor-pointer">
                                     <Popover>
                                         <PopoverTrigger><MoreHorizontal /></PopoverTrigger>

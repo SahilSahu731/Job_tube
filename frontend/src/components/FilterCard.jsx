@@ -11,7 +11,7 @@ const fitlerData = [
     },
     {
         fitlerType: "Industry",
-        array: ["Frontend Developer", "Backend Developer", "FullStack Developer", "Mobile Developer", "UI/UX Designer", "Software Engineer", "QA Engineer", "DevOps Engineer", "Project Manager", "Technical Writer", "Marketing Specialist", "Business Analyst", "Product Manager", "Business Analyst", "Sales Representative"]
+        array: ["Frontend Developer", "Backend Developer", "FullStack Developer", "Mobile Developer", "UI/UX Designer", "Software Engineer", "QA Engineer", "DevOps Engineer", "Project Manager", "Technical Writer", "Marketing Specialist", "Product Manager", "Business Analyst", "Sales Representative"]
     },
    
 ]
@@ -34,13 +34,13 @@ const FilterCard = () => {
             <RadioGroup className="ml-3 space-y-3" value={selectedValue} onValueChange={changeHandler}>
                 {
                     fitlerData.map((data, index) => (
-                        <div>
+                        <div key={index}>
                             <h1 className='font-bold text-lg'>{data.fitlerType}</h1>
                             {
                                 data.array.map((item, idx) => {
                                     const itemId = `id${index}-${idx}`
                                     return (
-                                        <div className='flex items-center space-x-2 my-2'>
+                                        <div key={idx} className='flex items-center space-x-2 my-2'>
                                             <RadioGroupItem className="dark" value={item} id={itemId} />
                                             <Label htmlFor={itemId}>{item}</Label>
                                         </div>

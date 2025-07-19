@@ -22,7 +22,7 @@ const Browse = () => {
             <Navbar />
             <div className='max-w-7xl mx-auto my-10'>
                 <h1 className='font-bold text-xl my-10'>Search Results ({allJobs.length})</h1>
-                 <motion.div className='grid grid-cols-3 gap-4' initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, x: -100 }} transition={{ duration: 1 }}>
+                 <motion.div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-10' initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, x: -100 }} transition={{ duration: 1 }}>
                     {
                         allJobs.map((job) => {
                             return (

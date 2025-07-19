@@ -13,11 +13,9 @@ const ApplicantsTable = () => {
     const { applicants } = useSelector(store => store.application);
 
     const statusHandler = async (status, id) => {
-        console.log('called');
         try {
             axios.defaults.withCredentials = true;
             const res = await axios.post(`${APPLICATION_API_END_POINT}/status/${id}/update`, { status });
-            console.log(res);
             if (res.data.success) {
                 toast.success(res.data.message);
             }
@@ -44,7 +42,7 @@ const ApplicantsTable = () => {
                     {
                         applicants && applicants?.applications?.map((item) => (
                             <tr className="hover:bg-gray-600" key={item._id}>
-                                <TableCell>{item?.applicant?.fullname}</TableCell>
+                                <TableCell>{item?.applicant?.fullName}</TableCell>
                                 <TableCell>{item?.applicant?.email}</TableCell>
                                 <TableCell>{item?.applicant?.phoneNumber}</TableCell>
                                 <TableCell >

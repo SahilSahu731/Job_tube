@@ -21,6 +21,7 @@ const Profile = () => {
     return (
         <div>
             <Navbar />
+            <div className='p-4'>
             <div className='max-w-4xl mt-10  mx-auto text-white bg-gray-600 border border-gray-200 rounded-2xl my-5 p-8'>
                 <div className='flex justify-between'>
                     <div className='flex items-center gap-4'>
@@ -46,7 +47,7 @@ const Profile = () => {
                 </div>
                 <div className='my-5'>
                     <h1>Skills</h1>
-                    <div className='flex items-center gap-1'>
+                    <div className='flex flex-wrap items-center gap-1'>
                         {
                             user?.profile?.skills.length !== 0 ? user?.profile?.skills.map((item, index) => <Badge className={'text-white hover:bg-gray-500 cursor-pointer bg-gray-400 rounded-full px-3  font-bold'} key={index}>{item}</Badge>) : <span>NA</span>
                         }
@@ -55,7 +56,7 @@ const Profile = () => {
                 <div className='grid w-full max-w-sm items-center gap-1.5'>
                     <Label className="text-md font-bold">Resume</Label>
                     {
-                        isResume ? <a target='blank' href={user?.profile?.resume} className='text-blue-500 w-full hover:underline cursor-pointer'>{user?.profile?.resumeOriginalName}</a> : <span>NA</span>
+                        isResume ? <a target='blank' href={user?.profile?.resume} className='text-blue-500 w-full text-sm  hover:underline cursor-pointer'>{user?.profile?.resumeOriginalName}</a> : <span>NA</span>
                     }
                 </div>
             </div>
@@ -65,6 +66,7 @@ const Profile = () => {
                 <AppliedJobTable />
             </div>
             <UpdateProfileDialog open={open} setOpen={setOpen}/>
+            </div>
         </div>
     )
 }

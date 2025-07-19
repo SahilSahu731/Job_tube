@@ -27,9 +27,8 @@ const Job = ({job}) => {
                 <Button className="" variant="outline" size="icon">
                     <Avatar>
                         <AvatarImage 
-                        // src={job?.company?.logo} 
+                        src={job?.company?.logo} 
                         className="w-14 h-14 bg-cover"
-                            src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80"
                         />
                     </Avatar>
                 </Button>
@@ -41,12 +40,12 @@ const Job = ({job}) => {
 
             <div>
                 <h1 className='font-bold text-lg my-2'>{job?.title}</h1>
-                <p className='text-sm text-gray-600'>{job?.description}</p>
+                <p className='text-sm text-gray-300'>{job?.description}</p>
             </div>
             <div className='flex items-center gap-2 mt-4'>
                 <Badge className={'text-blue-400 font-bold'} variant="ghost">{job?.position} Positions</Badge>
                 <Badge className={'text-red-600 font-bold'} variant="ghost">{job?.jobType}</Badge>
-                <Badge className={'text-yellow-400 font-bold'} variant="ghost">{job?.salary}LPA</Badge>
+                <Badge className={'text-yellow-400 font-bold'} variant="ghost">{job?.salary}</Badge>
             </div>
             <div className='flex justify-end items-center gap-4 mt-4'>
                 <Button onClick={()=> navigate(`/description/${job?._id}`)} className="bg-inherit border border-green-500 hover:bg-green-500 px-5 hover:px-10 transition-all duration-500" variant="outline">Details</Button>

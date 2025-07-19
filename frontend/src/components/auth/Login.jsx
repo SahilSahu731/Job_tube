@@ -29,7 +29,6 @@ const Login = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    // console.log(input)
 
     try {
       dispatch(setLoading(true));

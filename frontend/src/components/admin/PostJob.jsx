@@ -62,7 +62,7 @@ const PostJob = () => {
     return (
         <div>
             <Navbar />
-            <div className='flex items-center justify-center w-screen mt-10 my-5'>
+            <div className='flex items-center justify-center p-8 md:p-2 w-screen mt-10 my-5'>
                 <form onSubmit = {submitHandler} className='max-w-4xl border border-gray-200 p-10 shadow-lg rounded-md'>
                     <h1 className='font-bold text-2xl text-center border-b pb-5 mb-8'>Post a new job</h1>
                     <div className='grid grid-cols-2 gap-5'>
