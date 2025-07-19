@@ -73,7 +73,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
             <Dialog open={open}>
                 <DialogContent className="sm:max-w-[425px] bg-inherit" onInteractOutside={() => setOpen(false)}>
                     <DialogHeader>
-                        <DialogTitle>Update Profile</DialogTitle>
+                        <DialogTitle className="text-lg font-bold text-center uppercase border-b pb-5">Update Profile</DialogTitle>
                     </DialogHeader>
                     <form onSubmit={submitHandler}>
                         <div className='grid gap-4 py-4'>
@@ -137,13 +137,13 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                                     type="file"
                                     accept="application/pdf"
                                     onChange={fileChangeHandler}
-                                    className="col-span-3"
+                                    className="col-span-3 dark border border-gray-300"
                                 />
                             </div>
                         </div>
                         <DialogFooter>
                             {
-                                loading ? <Button className="w-full my-4"> <Loader2 className='mr-2 h-4 w-4 animate-spin' /> Please wait </Button> : <Button type="submit" className="w-full my-4">Update</Button>
+                                loading ? <Button className="w-full my-4 bg-green-700 hover:bg-green-700"> <Loader2 className='mr-2 h-4 w-4 animate-spin' /> Please wait </Button> : <Button type="submit" className="w-full my-4  bg-green-600 hover:bg-green-700 text-white">Update</Button>
                             }
                         </DialogFooter>
                     </form>

@@ -8,19 +8,20 @@ import { Label } from './ui/label'
 import { useSelector } from 'react-redux'
 import UpdateProfileDialog from './UpdateProfileDialog'
 import AppliedJobTable from './AppliedJobTable'
+import useGetAppliedJobs from '@/hooks/useGetAppliedJobs'
 
 const skills = ["Html", "Css", "Javascript", "Reactjs"]
 const isResume = true;
 
 const Profile = () => {
-    // useGetAppliedJobs();
+    useGetAppliedJobs();
     const [open, setOpen] = useState(false);
     const {user} = useSelector(store=>store.auth);
 
     return (
         <div>
             <Navbar />
-            <div className='max-w-4xl mx-auto text-white bg-gray-600 border border-gray-200 rounded-2xl my-5 p-8'>
+            <div className='max-w-4xl mt-10  mx-auto text-white bg-gray-600 border border-gray-200 rounded-2xl my-5 p-8'>
                 <div className='flex justify-between'>
                     <div className='flex items-center gap-4'>
                         <Avatar className="h-24 w-24 cursor-pointer hover:scale-105 transition-all duration-500">
@@ -31,7 +32,7 @@ const Profile = () => {
                             <p>{user?.profile?.bio}</p>
                         </div>
                     </div>
-                    <Button onClick={() => setOpen(true)} className="text-right" variant="outline"><Pen /></Button>
+                    <Button onClick={() => setOpen(true)} className="text-right bg-inherit rounded-full h-12 hover:bg-gray-100" variant="outline"><Pen className='' /></Button>
                 </div>
                 <div className='my-5'>
                     <div className='flex items-center gap-3 my-2'>
@@ -47,7 +48,7 @@ const Profile = () => {
                     <h1>Skills</h1>
                     <div className='flex items-center gap-1'>
                         {
-                            user?.profile?.skills.length !== 0 ? user?.profile?.skills.map((item, index) => <Badge key={index}>{item}</Badge>) : <span>NA</span>
+                            user?.profile?.skills.length !== 0 ? user?.profile?.skills.map((item, index) => <Badge className={'text-white hover:bg-gray-500 cursor-pointer bg-gray-400 rounded-full px-3  font-bold'} key={index}>{item}</Badge>) : <span>NA</span>
                         }
                     </div>
                 </div>

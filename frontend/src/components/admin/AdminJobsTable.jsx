@@ -27,7 +27,7 @@ const AdminJobsTable = () => {
             <Table>
                 <TableCaption>A list of your recent  posted jobs</TableCaption>
                 <TableHeader>
-                    <TableRow>
+                    <TableRow className="hover:bg-inherit">
                         <TableHead>Company Name</TableHead>
                         <TableHead>Role</TableHead>
                         <TableHead>Date</TableHead>
@@ -37,7 +37,7 @@ const AdminJobsTable = () => {
                 <TableBody>
                     {
                         filterJobs?.map((job) => (
-                            <tr>
+                            <tr className='hover:bg-gray-600'>
                                 <TableCell>{job?.company?.name}</TableCell>
                                 <TableCell>{job?.title}</TableCell>
                                 <TableCell>{job?.createdAt.split("T")[0]}</TableCell>

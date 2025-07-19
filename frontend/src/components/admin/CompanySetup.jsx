@@ -77,16 +77,16 @@ const CompanySetup = () => {
     return (
         <div>
             <Navbar />
-            <div className='max-w-xl mx-auto my-10'>
+            <div className='max-w-xl bg-gray-800 p-10 border border-gray-700 rounded-md  mx-auto my-10'>
                 <form onSubmit={submitHandler}>
-                    <div className='flex items-center gap-5 p-8'>
-                        <Button onClick={() => navigate("/admin/companies")} variant="outline" className="flex items-center gap-2 text-gray-500 font-semibold">
+                    <div className='flex items-center gap-10 mb-10 '>
+                        <Button  onClick={() => navigate("/admin/companies")} variant="outline" type="button" className="flex items-center gap-2 bg-inherit text-gray-100 border border-green-600 hover:bg-green-600 px-5 hover:px-10 transition-all duration-500 font-semibold">
                             <ArrowLeft />
                             <span>Back</span>
                         </Button>
-                        <h1 className='font-bold text-xl'>Company Setup</h1>
+                        <h1 className='font-bold ml-8 text-xl'>Company Setup</h1>
                     </div>
-                    <div className='grid grid-cols-2 gap-4'>
+                    <div className='grid grid-cols-2 gap-8'>
                         <div>
                             <Label>Company Name</Label>
                             <Input
@@ -94,6 +94,7 @@ const CompanySetup = () => {
                                 name="name"
                                 value={input.name}
                                 onChange={changeEventHandler}
+                                className="p-5 rounded my-2"
                             />
                         </div>
                         <div>
@@ -103,6 +104,8 @@ const CompanySetup = () => {
                                 name="description"
                                 value={input.description}
                                 onChange={changeEventHandler}
+                                className="p-5 rounded my-2"
+
                             />
                         </div>
                         <div>
@@ -112,6 +115,7 @@ const CompanySetup = () => {
                                 name="website"
                                 value={input.website}
                                 onChange={changeEventHandler}
+                                className="p-5 rounded my-2"
                             />
                         </div>
                         <div>
@@ -121,6 +125,7 @@ const CompanySetup = () => {
                                 name="location"
                                 value={input.location}
                                 onChange={changeEventHandler}
+                                className="p-5 rounded my-2"
                             />
                         </div>
                         <div>
@@ -133,7 +138,7 @@ const CompanySetup = () => {
                         </div>
                     </div>
                     {
-                        loading ? <Button className="w-full my-4"> <Loader2 className='mr-2 h-4 w-4 animate-spin' /> Please wait </Button> : <Button type="submit" className="w-full my-4">Update</Button>
+                         loading ? <Button className="w-full my-4 bg-green-700 hover:bg-green-700 mt-10"> <Loader2 className='mr-2 h-4 w-4 animate-spin' /> Please wait </Button> : <Button type="submit" className="w-full my-4 mt-10 bg-green-600 hover:bg-green-700 text-white">Update</Button>
                     }
                 </form>
             </div>

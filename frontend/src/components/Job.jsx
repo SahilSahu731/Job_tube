@@ -48,9 +48,9 @@ const Job = ({job}) => {
                 <Badge className={'text-red-600 font-bold'} variant="ghost">{job?.jobType}</Badge>
                 <Badge className={'text-yellow-400 font-bold'} variant="ghost">{job?.salary}LPA</Badge>
             </div>
-            <div className='flex items-center gap-4 mt-4'>
+            <div className='flex justify-end items-center gap-4 mt-4'>
                 <Button onClick={()=> navigate(`/description/${job?._id}`)} className="bg-inherit border border-green-500 hover:bg-green-500 px-5 hover:px-10 transition-all duration-500" variant="outline">Details</Button>
-                <Button className="bg-green-400 hover:bg-green-500 px-5 hover:px-10 transition-all duration-500">Save For Later</Button>
+                {/* <Button className="bg-green-400 hover:bg-green-500 px-5 hover:px-10 transition-all duration-500">Save For Later</Button> */}
             </div>
         </div>
     )

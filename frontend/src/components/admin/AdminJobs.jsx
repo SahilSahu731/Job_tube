@@ -23,11 +23,11 @@ const AdminJobs = () => {
       <div className='max-w-6xl mx-auto my-10'>
         <div className='flex items-center justify-between my-5'>
           <Input
-            className="w-fit"
+            className="w-fit rounded p-4"
             placeholder="Filter by name, role"
             onChange={(e) => setInput(e.target.value)}
           />
-          <Button onClick={() => navigate("/admin/jobs/create")}>New Jobs</Button>
+          <Button className='w-fit bg-green-600 rounded hover:bg-green-700 px-5 hover:px-10 transition-all duration-500'  onClick={() => navigate("/admin/jobs/create")}>New Jobs</Button>
         </div>
         <AdminJobsTable />
       </div>

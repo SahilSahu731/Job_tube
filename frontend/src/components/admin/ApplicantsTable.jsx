@@ -31,7 +31,7 @@ const ApplicantsTable = () => {
             <Table>
                 <TableCaption>A list of your recent applied user</TableCaption>
                 <TableHeader>
-                    <TableRow>
+                    <TableRow className="hover:bg-inherit">
                         <TableHead>FullName</TableHead>
                         <TableHead>Email</TableHead>
                         <TableHead>Contact</TableHead>
@@ -43,7 +43,7 @@ const ApplicantsTable = () => {
                 <TableBody>
                     {
                         applicants && applicants?.applications?.map((item) => (
-                            <tr key={item._id}>
+                            <tr className="hover:bg-gray-600" key={item._id}>
                                 <TableCell>{item?.applicant?.fullname}</TableCell>
                                 <TableCell>{item?.applicant?.email}</TableCell>
                                 <TableCell>{item?.applicant?.phoneNumber}</TableCell>

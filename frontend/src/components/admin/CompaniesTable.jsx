@@ -29,17 +29,17 @@ const CompaniesTable = () => {
             <Table>
                 <TableCaption>A list of your recent registered companies</TableCaption>
                 <TableHeader>
-                    <TableRow>
+                    <TableRow className="hover:bg-inherit">
                         <TableHead>Logo</TableHead>
                         <TableHead>Name</TableHead>
                         <TableHead>Date</TableHead>
                         <TableHead className="text-right">Action</TableHead>
                     </TableRow>
                 </TableHeader>
-                <TableBody>
+                <TableBody >
                     {
                         filterCompany?.map((company) => (
-                            <tr>
+                            <tr className="hover:bg-gray-600">
                                 <TableCell>
                                     <Avatar>
                                         <AvatarImage src={company.logo || "https://www.shutterstock.com/image-vector/circle-line-simple-design-logo-600nw-2174926871.jpg"}/>

@@ -157,8 +157,11 @@ export const updateProfile = async (req, res) => {
     }
 
     //cloudinary upload logic can be added here if you want to handle profile picture uploads
-    const fileUri = getDataUri(file);
-    const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
+    let cloudResponse;
+    if (file) {
+      const fileUri = getDataUri(file);
+      const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
+    }
 
     let skillsArray;
     if (skills) {

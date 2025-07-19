@@ -23,7 +23,6 @@ const Signup = () => {
     phoneNumber: "",
     password: "",
     role: "",
-    profile: "",
   });
   const [file, setFile] = useState(null);
 
@@ -37,15 +36,14 @@ const Signup = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(input);
     const formData = new FormData(); //formdata object
     formData.append("fullName", input.fullName);
     formData.append("email", input.email);
     formData.append("phoneNumber", input.phoneNumber);
     formData.append("password", input.password);
     formData.append("role", input.role);
-    if (input.file) {
-      formData.append("file", input.file);
+    if (file) {
+      formData.append("file", file);
     }
 
     try {
@@ -65,7 +63,6 @@ const Signup = () => {
     } finally {
       dispatch(setLoading(false));
     }
-    console.log(input);
   };
 
   useEffect(() => {
