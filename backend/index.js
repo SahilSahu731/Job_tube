@@ -18,12 +18,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());    
-const corsOptions = {
-  origin: process.env.FRONTEND_URL ,
-  credentials: true, // Allow cookies to be sent
-};
-app.use(cors(corsOptions));
-
+app.use(
+  cors({
+    origin: "https://job-tube.onrender.com",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
+  })
+);
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
