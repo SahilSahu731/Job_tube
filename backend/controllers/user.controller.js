@@ -117,7 +117,11 @@ export const login = async (req, res) => {
       .cookie("token", token, {
         maxAge: 1 * 24 * 60 * 60 * 1000,
         httpOnly: true,
-        sameSite:"none",
+        secure: true,
+        sameSite: "none",
+        domain: ".onrender.com",
+        path: "/",
+        partitioned: true, // Add Partitioned attribute for cross-site cookies
       })
       .json({
         success: true,
