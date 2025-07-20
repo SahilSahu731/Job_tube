@@ -119,9 +119,9 @@ export const login = async (req, res) => {
         httpOnly: true,
         secure: true,
         sameSite: "none",
-        domain: ".onrender.com",
+        // domain: ".onrender.com",
         path: "/",
-        partitioned: true, // Add Partitioned attribute for cross-site cookies
+        // partitioned: true, // Add Partitioned attribute for cross-site cookies
       })
       .json({
         success: true,
