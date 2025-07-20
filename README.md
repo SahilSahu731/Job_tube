@@ -2,7 +2,8 @@
 
 ## Your Intelligent Command Center for Job Applications
 
-![Job-Tube Dashboard Screenshot]()
+<img width="1920" height="943" alt="job-tube-home" src="https://github.com/user-attachments/assets/0f7d26f9-6729-468c-94a9-a0d4b87d09ee" />
+
 
 ## Table of Contents
 
@@ -11,9 +12,9 @@
 - [Live Demo](#live-demo)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation (Frontend)](#installation-frontend)
-  - [Installation (Backend)](#installation-backend)
+- [Prerequisites](#prerequisites)
+- [Installation (Frontend)](#installation-frontend)
+- [Installation (Backend)](#installation-backend)
 - [API Endpoints](#api-endpoints)
 - [Contributing](#contributing)
 - [License](#license)
