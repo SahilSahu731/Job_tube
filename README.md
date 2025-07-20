@@ -164,12 +164,6 @@ Job-Tube's backend exposes a RESTful API for seamless interaction. All endpoints
 | `GET`  | `/application`  | `/get`                | Get all job applications for the user        | Yes                     |
 | `GET`  | `/application`  | `/:id/applicants`     | Get applicants for a specific job by ID      | Yes                     |
 | `POST` | `/application`  | `/status/:id/update`  | Update the status of a specific job application by ID | Yes                     |
-| `GET`  | `/dashboard`    | `/stats`              | Get dashboard statistics (e.g., application count by status) | Yes |
-| `GET`  | `/interview`    | `/get`                | Get all interviews for the user              | Yes                     |
-| `POST` | `/interview`    | `/post`               | Schedule a new interview                     | Yes                     |
-| `GET`  | `/interview`    | `/get/:id`            | Get details for a specific interview by ID   | Yes                     |
-| `PUT`  | `/interview`    | `/update/:id`         | Update an interview's details                | Yes                     |
-| `DELETE`|`/interview`    | `/delete/:id`         | Delete an interview by ID                    | Yes                     |
 
 
 ## Contributing
